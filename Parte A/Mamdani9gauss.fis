@@ -1,0 +1,47 @@
+[System]
+Name='Mandami9gauss'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='input1'
+Range=[-1 1]
+NumMFs=3
+MF1='mf1':'gaussmf',[0.3539 -0.9947]
+MF2='mf2':'gaussmf',[0.339278489685732 0.00529]
+MF3='mf3':'gaussmf',[0.3538 1]
+
+[Input2]
+Name='input2'
+Range=[0 1]
+NumMFs=3
+MF1='mf1':'gaussmf',[0.1769 -1.388e-17]
+MF2='mf2':'gaussmf',[0.1769 0.5]
+MF3='mf3':'gaussmf',[0.1769 1]
+
+[Output1]
+Name='output1'
+Range=[-1 1]
+NumMFs=3
+MF1='output1':'gaussmf',[0.3538 -1]
+MF2='output2':'gaussmf',[0.3538 0]
+MF3='output3':'gaussmf',[0.3538 1]
+
+[Rules]
+1 1, 1 (1) : 2
+1 2, 1 (1) : 1
+1 3, 2 (1) : 1
+2 1, 1 (1) : 1
+2 2, 2 (1) : 1
+2 3, 3 (1) : 1
+3 2, 3 (1) : 1
+3 3, 3 (1) : 1
+3 1, 2 (1) : 1
